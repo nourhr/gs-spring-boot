@@ -1,0 +1,25 @@
+# Starter pipeline
+- task: Maven@3
+  inputs:
+    mavenPomFile: 'gs-spring-boot/app/pom.xml'
+    publishJUnitResults: false
+    javaHomeOption: '1.8'
+    mavenVersionOption: 'Default'
+    mavenAuthenticateFeed: false
+    effectivePomSkip: false
+    sonarQubeRunAnalysis: false
+    
+trigger:
+- master
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- script: echo Hello, world!
+  displayName: 'Run a one-line script'
+
+- script: |
+    echo Add other tasks to build, test, and deploy your project.
+    echo See https://aka.ms/yaml
+  displayName: 'Run a multi-line script'
